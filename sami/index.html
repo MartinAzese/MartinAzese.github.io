@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hollandine Sami Kouaji | Ph.D. Research Training Series</title>
+
+<style>
+
+:root{
+    --navy:#071a2f;
+    --blue:#0b4f87;
+    --blue2:#1479b8;
+    --light:#f4f8fb;
+    --gold:#d6a84b;
+    --text:#172331;
+    --muted:#5c6975;
+    --border:#dce5ec;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    line-height:1.65;
+    background:white;
+}
+
+header{
+    background:var(--navy);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.brand{
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:24px;
+    font-size:0.94rem;
+}
+
+nav a:hover{
+    color:#9fd3f3;
+}
+
+.hero{
+    background:
+      linear-gradient(135deg, rgba(7,26,47,.97), rgba(11,79,135,.93));
+    color:white;
+    padding:82px 7% 76px;
+}
+
+.hero-inner{
+    max-width:1100px;
+    margin:auto;
+}
+
+.eyebrow{
+    color:#a9d8f4;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:0.82rem;
+    margin-bottom:13px;
+}
+
+.hero h1{
+    font-size:clamp(2.3rem,5vw,4.3rem);
+    line-height:1.08;
+    margin:0 0 20px;
+}
+
+.hero h2{
+    font-weight:400;
+    max-width:900px;
+    font-size:1.3rem;
+    line-height:1.5;
+    margin:0;
+    color:#e3f1fa;
+}
+
+.container{
+    width:min(1100px,86%);
+    margin:auto;
+    padding:62px 0;
+}
+
+.section-alt{
+    background:var(--light);
+}
+
+.section-alt .container{
+    padding-top:62px;
+    padding-bottom:62px;
+}
+
+h2{
+    color:var(--navy);
+    font-size:2rem;
+    margin-top:0;
+}
+
+h3{
+    color:var(--blue);
+}
+
+.lead{
+    font-size:1.08rem;
+    max-width:950px;
+}
+
+.profile-grid,
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.045);
+}
+
+.card strong{
+    color:var(--navy);
+}
+
+.number{
+    display:inline-block;
+    color:var(--blue2);
+    font-weight:700;
+    font-size:.82rem;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.research-box{
+    border-left:5px solid var(--blue);
+    background:#f6fafd;
+    padding:27px 30px;
+    margin:28px 0;
+}
+
+.status{
+    display:inline-block;
+    border-radius:20px;
+    padding:5px 12px;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.5px;
+    margin-top:8px;
+}
+
+.status-active{
+    background:#dceef9;
+    color:#07527f;
+}
+
+.status-published{
+    background:#e3f4e8;
+    color:#256438;
+}
+
+.status-upcoming{
+    background:#fff2d8;
+    color:#7a5710;
+}
+
+.timeline{
+    border-left:3px solid #c7d9e6;
+    padding-left:28px;
+    margin-top:32px;
+}
+
+.timeline-item{
+    margin-bottom:34px;
+    position:relative;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-36px;
+    top:7px;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:var(--blue);
+    border:3px solid white;
+    box-shadow:0 0 0 2px var(--blue);
+}
+
+.callout{
+    background:var(--navy);
+    color:white;
+    border-radius:10px;
+    padding:32px;
+    margin-top:30px;
+}
+
+.callout h3{
+    color:#a9d8f4;
+    margin-top:0;
+}
+
+footer{
+    background:#051424;
+    color:#c9d4dd;
+    padding:32px 7%;
+    text-align:center;
+    font-size:.9rem;
+}
+
+.back-link{
+    display:inline-block;
+    margin-top:25px;
+    color:var(--blue);
+    font-weight:700;
+    text-decoration:none;
+}
+
+@media(max-width:700px){
+    nav{
+        margin-top:12px;
+        width:100%;
+    }
+
+    nav a{
+        margin:0 16px 0 0;
+        display:inline-block;
+        margin-top:8px;
+    }
+
+    .hero{
+        padding-top:58px;
+        padding-bottom:58px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="brand">
+AZESE FLUID DYNAMICS
+</div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../index.html#research">Research</a>
+<a href="../index.html#training">Ph.D. Training</a>
+<a href="../index.html#resources">Resources</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="eyebrow">
+PH.D. RESEARCH TRAINING SERIES
+</div>
+
+<h1>
+Hollandine Sami Kouaji
+</h1>
+
+<h2>
+Transient Flow Cessation • Newtonian &amp; Viscoelastic Fluids •
+Memory Effects • Spectral Relaxation
+</h2>
+
+</div>
+
+</section>
+
+
+<main>
+
+
+<section class="container">
+
+<h2>Research Training Profile</h2>
+
+<p class="lead">
+This page documents the progressive research development and doctoral
+training of <strong>Hollandine Sami Kouaji</strong> under the supervision
+of <strong>Prof. Martin N. Azese</strong>. The program combines analytical
+fluid mechanics, spectral modeling, numerical verification, independent
+figure reproduction, physical interpretation, and scholarly research
+development.
+</p>
+
+<div class="profile-grid">
+
+<div class="card">
+<strong>Ph.D. Researcher</strong><br>
+Hollandine Sami Kouaji
+</div>
+
+<div class="card">
+<strong>Research Supervisor</strong><br>
+Prof. Martin N. Azese
+</div>
+
+<div class="card">
+<strong>Research Area</strong><br>
+Transient pressure-driven flow, flow cessation, Newtonian and
+viscoelastic-fluid dynamics, memory effects, and spectral relaxation.
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Ph.D. Research Focus</h2>
+
+<div class="research-box">
+
+Sami's doctoral research examines what happens when a pressure-driven
+flow is subjected to transient forcing and, in particular, when the
+driving pressure is removed. The resulting cessation process provides
+a controlled framework for studying the competition among viscous
+dissipation, fluid inertia, viscoelastic memory, recoil, modal
+relaxation, and conduit geometry.
+
+<br><br>
+
+The research develops Newtonian and Maxwell-fluid descriptions using
+cross-sectionally resolved spectral representations. Particular
+attention is given to the transition from forced flow to post-cessation
+relaxation and to the manner in which material memory can alter the
+decay, reversal, recoil, and long-time response of the fluid.
+
+</div>
+
+<span class="status status-active">
+CURRENT DOCTORAL RESEARCH
+</span>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2>Research Development Pathway</h2>
+
+<p>
+The doctoral training is organized around a progression from
+fundamental transient-flow mechanics to independent verification,
+interpretation, and research-level analysis.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<span class="number">01 • FOUNDATION</span>
+<h3>Transient Flow Mechanics</h3>
+Pressure-driven conduit flow, modal dynamics, viscous relaxation,
+and the Newtonian baseline.
+</div>
+
+<div class="card">
+<span class="number">02 • MEMORY</span>
+<h3>Viscoelastic Response</h3>
+Maxwell-fluid dynamics, constitutive memory, relaxation time,
+and post-forcing stress persistence.
+</div>
+
+<div class="card">
+<span class="number">03 • CESSATION</span>
+<h3>Pressure-Stop Dynamics</h3>
+Removal of the driving pressure, flow decay, recoil,
+reversal, and cessation timescales.
+</div>
+
+<div class="card">
+<span class="number">04 • VERIFICATION</span>
+<h3>Research Reproducibility</h3>
+Independent checking of analytical developments, numerical
+solutions, parameter trends, and selected manuscript figures.
+</div>
+
+<div class="card">
+<span class="number">05 • INTERPRETATION</span>
+<h3>Spectral Relaxation</h3>
+Connecting modal decay, geometry, memory, and long-time
+behavior to physically interpretable fluid-mechanical mechanisms.
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Current Research Manuscript</h2>
+
+<h3>
+Unsteady Pressure-Driven Flow Cessation in Newtonian and Maxwell Fluids:
+Memory, Recoil, and Spectral Relaxation
+</h3>
+
+<p>
+The current doctoral manuscript develops a theoretical and computational
+framework for pressure-driven flow cessation in Newtonian and
+Maxwell-viscoelastic liquids. The work examines the transient response
+before and after cessation, with emphasis on modal relaxation,
+viscoelastic memory, recoil and reversal behavior, and the influence
+of conduit geometry.
+</p>
+
+<p>
+The manuscript is presently undergoing peer review. Accordingly,
+this research-training page documents the scientific development and
+training framework without reproducing or publicly releasing material
+that should remain associated with the journal review process.
+</p>
+
+<span class="status status-active">
+MANUSCRIPT UNDER REVIEW
+</span>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2>Research Verification &amp; Reproducibility Training</h2>
+
+<p class="lead">
+An important component of Sami's doctoral development has been learning
+to treat a research result not merely as an output to be accepted, but
+as a result that must be independently interrogated, reproduced, and
+physically understood.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Analytical Verification</h3>
+Selected analytical developments are independently checked to confirm
+their mathematical consistency, limiting behavior, and physical meaning.
+</div>
+
+<div class="card">
+<h3>Independent Figure Reproduction</h3>
+Selected research figures are independently replotted as a verification
+exercise, allowing trends, parameter dependence, and numerical
+consistency to be examined separately from the original calculations.
+</div>
+
+<div class="card">
+<h3>Numerical Consistency</h3>
+Computational results are compared against analytical expectations,
+limiting cases, and independently reproduced calculations where
+appropriate.
+</div>
+
+<div class="card">
+<h3>Physical Interpretation</h3>
+The training emphasizes explaining why a transient occurs:
+how viscous diffusion, inertia, material memory, geometry, and
+spectral modes determine the observed response.
+</div>
+
+</div>
+
+
+<div class="callout">
+
+<h3>Research-Training Principle</h3>
+
+The objective is to progress from reproducing a result to explaining
+it, from explaining it to testing it, and ultimately from testing
+existing analysis to developing independent research questions and
+solutions.
+
+</div>
+
+</section>
+
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Published Research Foundation</h2>
+
+<p>
+Sami's doctoral development is connected to an earlier published
+research foundation in transient pressure-driven transport in narrow
+conduits. That work examined the temporal evolution of pressure-driven
+encroachment using a spectral representation of the velocity field and
+considered both rectangular and circular conduit geometries.
+</p>
+
+<div class="card">
+
+<span class="status status-published">
+PUBLISHED RESEARCH
+</span>
+
+<h3>
+Transient dynamics of pressure-driven encroachment in narrow conduits
+with rate-dependent body force
+</h3>
+
+<p>
+This prior collaborative work provides part of the scientific
+background from which the later doctoral investigation of flow
+cessation, relaxation, and viscoelastic memory developed.
+</p>
+
+<p>
+Sami participated as a co-author in this published research. Her
+doctoral work subsequently advances toward the more specialized
+problem of transient pressure removal and the comparison of Newtonian
+and viscoelastic post-forcing dynamics.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2>Training Activities Completed to Date</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Research Literature &amp; Physical Framework</h3>
+Development of the physical background needed to interpret transient
+pressure-driven conduit flows and their characteristic timescales.
+</div>
+
+<div class="timeline-item">
+<h3>Analytical Verification</h3>
+Checking selected mathematical developments and their consistency with
+the governing physical assumptions.
+</div>
+
+<div class="timeline-item">
+<h3>Independent Numerical Reproduction</h3>
+Reproduction of selected numerical results and manuscript figures to
+test computational consistency and parameter trends.
+</div>
+
+<div class="timeline-item">
+<h3>Newtonian–Viscoelastic Comparison</h3>
+Training in identifying the dynamical consequences of constitutive
+memory by contrasting Newtonian relaxation with Maxwell-fluid response.
+</div>
+
+<div class="timeline-item">
+<h3>Scientific Interpretation</h3>
+Connecting numerical and analytical observations to viscous
+dissipation, inertia, memory, recoil, modal relaxation, and geometry.
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Upcoming Research-Training Projects</h2>
+
+<p class="lead">
+A formal sequence of stand-alone analytical and computational
+research-training projects is being developed for this doctoral
+program. Unlike completed training modules, these activities have not
+yet been assigned project numbers and are therefore presented here as
+forthcoming work.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<span class="status status-upcoming">UPCOMING</span>
+<h3>Analytical Training Modules</h3>
+Reduced dynamical systems, relaxation models, limiting cases,
+timescale analysis, and physically motivated exact solutions.
+</div>
+
+<div class="card">
+<span class="status status-upcoming">UPCOMING</span>
+<h3>Computational Training Modules</h3>
+Independent numerical implementation, convergence and verification,
+parameter sweeps, and reproducible visualization.
+</div>
+
+<div class="card">
+<span class="status status-upcoming">UPCOMING</span>
+<h3>Spectral-Dynamics Modules</h3>
+Modal decomposition, dominant-mode approximations, spectral
+relaxation, and geometry-dependent decay.
+</div>
+
+<div class="card">
+<span class="status status-upcoming">UPCOMING</span>
+<h3>Research Independence</h3>
+Progressive exercises aimed at moving from verification of established
+results toward formulation and investigation of new research questions.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2>Research Continuity</h2>
+
+<p>
+The training pathway is designed as a scientific continuum rather than
+a collection of disconnected exercises:
+</p>
+
+<div class="research-box">
+
+<strong>
+Transient pressure-driven transport
+&nbsp;&rarr;&nbsp;
+pressure cessation
+&nbsp;&rarr;&nbsp;
+Newtonian relaxation
+&nbsp;&rarr;&nbsp;
+viscoelastic memory and recoil
+&nbsp;&rarr;&nbsp;
+spectral interpretation
+&nbsp;&rarr;&nbsp;
+independent doctoral research.
+</strong>
+
+</div>
+
+<p>
+As additional training projects are formally assigned, completed,
+verified, and prepared for public dissemination, they will be added
+progressively to this research-training series.
+</p>
+
+</section>
+
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Contributions &amp; Academic Roles</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>Prof. Martin N. Azese</h3>
+
+Research conception and supervision; development of the doctoral
+research framework; analytical and numerical research guidance;
+formulation of research-training activities; interpretation and
+manuscript development; and integration of individual exercises into
+the broader Ph.D. research program.
+
+</div>
+
+
+<div class="card">
+
+<h3>Hollandine Sami Kouaji</h3>
+
+Doctoral researcher; participation in analytical and computational
+verification; independent reproduction of selected research figures
+and results; examination of parameter trends and consistency; and
+progressive development of physical interpretation and research
+independence under supervision.
+
+</div>
+
+</div>
+
+<a class="back-link" href="../index.html">
+← Return to AZESE Fluid Dynamics Research &amp; Training
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>AZESE Fluid Dynamics Research &amp; Training</strong><br>
+Hollandine Sami Kouaji — Ph.D. Research Training Series<br>
+Prof. Martin N. Azese • Mechanical &amp; Aerospace Engineering
+
+</footer>
+
+
+</body>
+</html>
