@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Project 01 | J. J. Engola | AZESE Fluid Dynamics</title>
+
+  <meta name="description"
+        content="Research Training Project 01: Analytical dynamics of a moving Jurin level and damped capillary oscillations. Exercise designed by Prof. Martin N. Azese and solved by Ph.D. researcher J. J. Engola.">
+
+  <!-- MathJax for professional mathematical typesetting -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['\\[','\\]']]
+      }
+    };
+  </script>
+
+  <script async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202833;
+      background: white;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: #0b1f33;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: #e8eef5;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b1f33, #183f61);
+      color: white;
+      padding: 75px 8%;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .series {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #c9d8e7;
+    }
+
+    .project-label {
+      display: inline-block;
+      margin-top: 18px;
+      background: #e6edf4;
+      color: #153b59;
+      padding: 6px 11px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 43px;
+      line-height: 1.18;
+      margin: 18px 0;
+      max-width: 950px;
+    }
+
+    .hero-subtitle {
+      max-width: 850px;
+      font-size: 18px;
+      color: #e0e9f2;
+    }
+
+    .authors {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      max-width: 850px;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 58px 30px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #0b2b48;
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #123b5a;
+    }
+
+    .lead {
+      font-size: 18px;
+    }
+
+    .overview-box {
+      background: #f3f6f8;
+      border-left: 5px solid #1c5279;
+      padding: 27px;
+      margin: 28px 0;
+    }
+
+    .objectives {
+      background: #f5f7f9;
+    }
+
+    .objective-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .objective {
+      background: white;
+      padding: 22px;
+      border-top: 4px solid #1c5279;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .objective strong {
+      color: #0b2b48;
+    }
+
+    .equation-box {
+      background: #f7f9fb;
+      border: 1px solid #d8e0e8;
+      padding: 25px;
+      margin: 25px 0;
+      overflow-x: auto;
+    }
+
+    .result-box {
+      background: #edf4f8;
+      border-left: 5px solid #1c5279;
+      padding: 25px;
+      margin: 28px 0;
+    }
+
+    .parameter-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+
+    .parameter-table th,
+    .parameter-table td {
+      border: 1px solid #d6dde4;
+      padding: 9px;
+      text-align: center;
+    }
+
+    .parameter-table th {
+      background: #0b2b48;
+      color: white;
+    }
+
+    .parameter-table tr:nth-child(even) {
+      background: #f5f7f9;
+    }
+
+    .interpretation {
+      background: #f3f6f8;
+    }
+
+    .parameter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .parameter {
+      background: white;
+      border: 1px solid #d8e0e8;
+      padding: 18px;
+    }
+
+    .parameter strong {
+      color: #123b5a;
+    }
+
+    .caution {
+      background: #fff9e8;
+      border-left: 5px solid #b28a2e;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .supervisor {
+      background: #0b2b48;
+      color: white;
+    }
+
+    .supervisor h2 {
+      color: white;
+    }
+
+    .supervisor p {
+      color: #e7edf3;
+    }
+
+    .credit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+
+    .credit-card {
+      border: 1px solid #d8e0e8;
+      padding: 24px;
+    }
+
+    .downloads {
+      background: #f3f6f8;
+    }
+
+    .download-card {
+      background: white;
+      padding: 20px;
+      margin: 13px 0;
+      border-left: 4px solid #1c5279;
+    }
+
+    .coming {
+      display: inline-block;
+      background: #e7eef4;
+      color: #183f61;
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: #183f61;
+      color: white;
+      padding: 11px 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #081827;
+      color: #cbd6df;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      nav {
+        display: block;
+      }
+
+      nav .links {
+        margin-top: 12px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 14px 0 0;
+      }
+
+      .parameter-table {
+        font-size: 12px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<nav>
+
+  <div class="brand">
+    AZESE FLUID DYNAMICS
+  </div>
+
+  <div class="links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">Engola Training Series</a>
+    <a href="../index.html#research">Research</a>
+    <a href="../index.html#resources">Resources</a>
+  </div>
+
+</nav>
+
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="series">
+      J. J. Engola — Ph.D. Research Training Series
+    </div>
+
+    <div class="project-label">
+      PROJECT 01 • FOUNDATION
+    </div>
+
+    <h1>
+      Analytical Dynamics of a Moving Jurin Level
+      and Damped Capillary Oscillations
+    </h1>
+
+    <p class="hero-subtitle">
+      A controlled analytical exercise in forced second-order dynamics,
+      relaxation, damped oscillation, moving-reference decomposition,
+      parameter sensitivity, and physical interpretation.
+    </p>
+
+    <div class="authors">
+
+      <strong>Training Exercise Designed by:</strong>
+      Prof. Martin N. Azese
+      <br>
+
+      <strong>Analytical & Computational Solution:</strong>
+      J. J. Engola
+      <br>
+
+      <strong>Research Context:</strong>
+      Ph.D. training in transient capillary dynamics
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<section class="container">
+
+  <h2>1. Project Overview</h2>
+
+  <p class="lead">
+    Project 01 establishes a mathematical and physical foundation for
+    interpreting transient capillary oscillations before confronting the
+    more strongly coupled nonlinear dynamics of the doctoral research.
+  </p>
+
+  <div class="overview-box">
+
+    <strong>Central training question:</strong>
+
+    <p>
+      Can a researcher derive, verify, visualize, and physically interpret
+      the exact response of a forced second-order dynamical system describing
+      damped oscillation about a time-dependent relaxing reference level?
+    </p>
+
+  </div>
+
+  <p>
+    The exercise was intentionally structured so that the final closed-form
+    response was not to be assumed at the outset. The student was required
+    to obtain the homogeneous and particular solutions analytically,
+    reconstruct the complete response, verify it, and then investigate its
+    mathematical and physical content.
+  </p>
+
+</section>
+
+
+<section class="objectives">
+
+  <div class="container">
+
+    <h2>2. Learning Objectives</h2>
+
+    <div class="objective-grid">
+
+      <div class="objective">
+        <strong>Derive</strong>
+        <p>
+          Solve the homogeneous and forced components of the governing
+          second-order ordinary differential equation.
+        </p>
+      </div>
+
+      <div class="objective">
+        <strong>Verify</strong>
+        <p>
+          Check the derived response analytically and, where appropriate,
+          computationally.
+        </p>
+      </div>
+
+      <div class="objective">
+        <strong>Visualize</strong>
+        <p>
+          Plot the full response, evolving reference level, oscillatory
+          deviation, and damping envelopes.
+        </p>
+      </div>
+
+      <div class="objective">
+        <strong>Interpret</strong>
+        <p>
+          Connect mathematical parameters and timescales to fluid-mechanical
+          ideas such as relaxation, dissipation, and capillary oscillation.
+        </p>
+      </div>
+
+      <div class="objective">
+        <strong>Compare</strong>
+        <p>
+          Use controlled parameter variations to isolate the roles of
+          damping, frequency, forcing amplitude, and reference relaxation.
+        </p>
+      </div>
+
+      <div class="objective">
+        <strong>Critique</strong>
+        <p>
+          Distinguish the pedagogical surrogate from a predictive,
+          fully coupled capillary-flow model.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <h2>3. Analytical Structure</h2>
+
+  <p>
+    Engola's derivation separates the response into a slowly evolving
+    reference contribution and a damped oscillatory contribution.
+    The resulting closed-form response is
+  </p>
+
+  <div class="result-box">
+
+    \[
+      \boxed{
+      y(t)
+      =
+      a-bt^{2}e^{-\xi t}
+      +
+      ce^{-\gamma t}\sin(\Omega t)
+      }
+    \]
+
+  </div>
+
+  <p>
+    This representation provides a useful analytical decomposition:
+  </p>
+
+  <div class="equation-box">
+
+    \[
+      y(t)
+      =
+      \underbrace{a-bt^{2}e^{-\xi t}}_{\text{slowly evolving reference}}
+      +
+      \underbrace{ce^{-\gamma t}\sin(\Omega t)}_{\text{damped oscillatory response}} .
+    \]
+
+  </div>
+
+  <p>
+    The construction deliberately separates two relaxation mechanisms:
+    the evolution of the reference state through \(\xi\), and the decay
+    of the oscillatory disturbance through \(\gamma\).
+  </p>
+
+</section>
+
+
+<section class="container">
+
+  <h2>4. Moving Reference Level</h2>
+
+  <p>
+    The slowly varying component is defined in the exercise as
+  </p>
+
+  <div class="equation-box">
+
+    \[
+      \boxed{
+      y_J(t)=a-bt^{2}e^{-\xi t}
+      }
+    \]
+
+  </div>
+
+  <p>
+    Within the pedagogical model, \(y_J(t)\) plays the role of a moving
+    Jurin-like reference level about which the faster oscillatory motion
+    occurs. Its transient component is non-monotonic and possesses an
+    extremum associated with the competition between the algebraic
+    factor \(t^2\) and exponential relaxation \(e^{-\xi t}\).
+  </p>
+
+  <p>
+    This separation allows the student to distinguish motion of the
+    reference state itself from oscillation relative to that state.
+  </p>
+
+</section>
+
+
+<section class="container">
+
+  <h2>5. Oscillatory Displacement and Damping</h2>
+
+  <p>
+    Subtracting the moving reference from the total response gives
+  </p>
+
+  <div class="result-box">
+
+    \[
+      \boxed{
+      z(t)
+      =
+      y(t)-y_J(t)
+      =
+      ce^{-\gamma t}\sin(\Omega t)
+      }
+    \]
+
+  </div>
+
+  <p>
+    The corresponding upper and lower envelopes are
+  </p>
+
+  <div class="equation-box">
+
+    \[
+      z_{\mathrm{env}}^{\pm}(t)
+      =
+      \pm c e^{-\gamma t}.
+    \]
+
+  </div>
+
+  <p>
+    Hence the instantaneous oscillation amplitude is
+  </p>
+
+  <div class="equation-box">
+
+    \[
+      A(t)=c e^{-\gamma t},
+    \]
+
+    with damping timescale
+
+    \[
+      \tau_\gamma=\frac{1}{\gamma}.
+    \]
+
+    The oscillation period is
+
+    \[
+      T=\frac{2\pi}{\Omega}.
+    \]
+
+  </div>
+
+  <p>
+    These quantities provide direct measures of how rapidly the oscillation
+    decays and how rapidly successive oscillatory cycles occur.
+  </p>
+
+</section>
+
+
+<section class="container">
+
+  <h2>6. Controlled Parameter Study</h2>
+
+  <p>
+    A central feature of Project 01 is the controlled numerical study.
+    Rather than varying all parameters simultaneously, the prescribed
+    cases isolate individual effects relative to a reference case.
+  </p>
+
+  <div style="overflow-x:auto;">
+
+    <table class="parameter-table">
+
+      <tr>
+        <th>Case</th>
+        <th>\(a\)</th>
+        <th>\(b\)</th>
+        <th>\(c\)</th>
+        <th>\(\xi\)</th>
+        <th>\(\gamma\)</th>
+        <th>\(\Omega\)</th>
+      </tr>
+
+      <tr><td>R0</td><td>1</td><td>0.5</td><td>25</td><td>1</td><td>0.10</td><td>10.5</td></tr>
+      <tr><td>R1</td><td>1</td><td>0.5</td><td>5</td><td>1</td><td>0.10</td><td>10.5</td></tr>
+      <tr><td>R2</td><td>1</td><td>0.5</td><td>5</td><td>1</td><td>0.50</td><td>10.5</td></tr>
+      <tr><td>R3</td><td>1</td><td>0.5</td><td>5</td><td>1</td><td>0.02</td><td>10.5</td></tr>
+      <tr><td>R4</td><td>1</td><td>0.5</td><td>5</td><td>1</td><td>0.10</td><td>5</td></tr>
+      <tr><td>R5</td><td>1</td><td>0.5</td><td>5</td><td>1</td><td>0.10</td><td>20</td></tr>
+      <tr><td>R6</td><td>1</td><td>0.1</td><td>5</td><td>1</td><td>0.10</td><td>10.5</td></tr>
+      <tr><td>R7</td><td>1</td><td>0.5</td><td>10</td><td>1</td><td>0.10</td><td>10.5</td></tr>
+      <tr><td>R8</td><td>1</td><td>0.5</td><td>5</td><td>0.5</td><td>0.10</td><td>10.5</td></tr>
+      <tr><td>R9</td><td>1</td><td>0.5</td><td>5</td><td>2</td><td>0.10</td><td>10.5</td></tr>
+
+    </table>
+
+  </div>
+
+  <p>
+    The cases allow controlled comparisons of oscillatory damping,
+    frequency, oscillation amplitude, slow-reference excursion, and
+    reference-relaxation rate.
+  </p>
+
+</section>
+
+
+<section class="interpretation">
+
+  <div class="container">
+
+    <h2>7. Physical Interpretation of the Parameters</h2>
+
+    <div class="parameter-grid">
+
+      <div class="parameter">
+        <strong>\(a\)</strong><br>
+        Final equilibrium or Jurin-like reference level.
+      </div>
+
+      <div class="parameter">
+        <strong>\(\Omega\)</strong><br>
+        Oscillation frequency associated with the capillary pulsation.
+      </div>
+
+      <div class="parameter">
+        <strong>\(\gamma\)</strong><br>
+        Rate governing decay of the oscillatory motion and representing
+        dissipation in the simplified interpretation.
+      </div>
+
+      <div class="parameter">
+        <strong>\(\xi\)</strong><br>
+        Relaxation rate governing evolution of the slowly varying
+        reference level.
+      </div>
+
+      <div class="parameter">
+        <strong>\(b\)</strong><br>
+        Controls the magnitude of the slow reference-level excursion.
+      </div>
+
+      <div class="parameter">
+        <strong>\(c\)</strong><br>
+        Controls the initial scale of the damped oscillatory contribution.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <h2>8. Model Scope and Limitations</h2>
+
+  <div class="caution">
+
+    <strong>Important physical distinction</strong>
+
+    <p>
+      Project 01 is a controlled analytical training model. It is not
+      intended to replace the fully coupled nonlinear capillary-flow
+      equations used in the doctoral research.
+    </p>
+
+  </div>
+
+  <p>
+    In the exercise, the moving reference level is prescribed in a form
+    chosen to expose relaxation, extrema, and competing timescales clearly.
+    The parameters are also varied independently for pedagogical comparison.
+    In a physical capillary system, however, frequency, damping, forcing,
+    meniscus position, gravity, viscous resistance, surface tension,
+    entrance dynamics, and liquid-column inertia can be dynamically coupled.
+  </p>
+
+  <p>
+    Recognizing this distinction is itself part of the research training:
+    a simplified model is valuable when it isolates mechanisms and develops
+    physical intuition, provided its domain of validity is stated clearly.
+  </p>
+
+</section>
+
+
+<section class="container">
+
+  <h2>9. Connection to the Ph.D. Research</h2>
+
+  <p class="lead">
+    The analytical exercise provides a conceptual bridge from classical
+    damped dynamics to the richer transient behavior of a moving liquid
+    column.
+  </p>
+
+  <p>
+    Engola's doctoral research examines capillary dynamics in rectangular
+    and circular conduits under unsteady surface tension while additionally
+    accounting for gravity and entrance effects. In that setting, the
+    meniscus can experience penetration, cessation, overshoot, reversal,
+    rebound, and oscillatory relaxation as capillary forcing competes with
+    gravitational resistance, viscous dissipation, inertia, geometry, and
+    entrance dynamics.
+  </p>
+
+  <p>
+    Project 01 therefore trains the analytical language needed to identify
+    oscillation amplitude, damping, characteristic timescales, moving
+    reference states, and frequency before these concepts are encountered
+    in the nonlinear spectral capillary formulation.
+  </p>
+
+</section>
+
+
+<section class="supervisor">
+
+  <div class="container">
+
+    <h2>10. Supervisor Perspective</h2>
+
+    <p>
+      This exercise was designed as a foundation-building research task:
+      not simply to obtain a closed-form solution, but to require the
+      researcher to derive it, decompose it, interrogate its characteristic
+      timescales, perform controlled parameter comparisons, interpret the
+      resulting dynamics, and identify where the simplified model ceases
+      to represent the full physics.
+    </p>
+
+    <p>
+      The broader training philosophy is that mathematical manipulation,
+      computation, and physical reasoning should develop together. A
+      researcher should be able to explain not only what a curve does,
+      but which mechanism produces the behavior, which parameter controls
+      it, and which assumptions limit the conclusion.
+    </p>
+
+    <p>
+      <strong>— Prof. Martin N. Azese, Research Supervisor</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="downloads">
+
+  <div class="container">
+
+    <h2>11. Project Materials & Reproducibility</h2>
+
+    <p>
+      The supporting materials for this training module will be made
+      publicly accessible from this page.
+    </p>
+
+    <div class="download-card">
+      <strong>Original Project 01 Assignment</strong><br>
+      Training exercise prepared by Prof. Martin N. Azese.
+      <br><span class="coming">DOWNLOAD LINK TO BE ADDED</span>
+    </div>
+
+    <div class="download-card">
+      <strong>J. J. Engola — Complete Project 01 Solution</strong><br>
+      Analytical derivation, numerical study, figures, and interpretation.
+      <br><span class="coming">DOWNLOAD LINK TO BE ADDED</span>
+    </div>
+
+    <div class="download-card">
+      <strong>Computational / Plotting Materials</strong><br>
+      Supporting reproducibility files will be added where appropriate.
+      <br><span class="coming">FILES TO BE ADDED</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <h2>12. Contributions & Attribution</h2>
+
+  <div class="credit-grid">
+
+    <div class="credit-card">
+
+      <h3>Prof. Martin N. Azese</h3>
+
+      <p>
+        Research supervision; conception and design of the training
+        exercise; formulation of the analytical and numerical tasks;
+        physical framework; training strategy; and integration with the
+        broader Ph.D. research program.
+      </p>
+
+    </div>
+
+    <div class="credit-card">
+
+      <h3>J. J. Engola</h3>
+
+      <p>
+        Analytical solution; mathematical derivations; numerical
+        investigation; plotting and visualization; parameter comparisons;
+        verification; and physical interpretation developed in response
+        to the assigned research-training exercise.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <h2>13. Suggested Citation</h2>
+
+  <p>
+    Until a DOI-bearing archival version is released, this public training
+    module may be cited as:
+  </p>
+
+  <div class="overview-box">
+
+    <strong>
+      Azese, M. N. & Engola, J. J. (2026).
+    </strong>
+    <em>
+      Research Training Project 01: Analytical Dynamics of a Moving Jurin
+      Level and Damped Capillary Oscillations.
+    </em>
+    AZESE Fluid Dynamics Research & Training, Ph.D. Research Training Series.
+  </div>
+
+  <p>
+    A persistent DOI and archival citation can be added to this section
+    when the public release is deposited in an appropriate research
+    repository.
+  </p>
+
+  <a class="back-link" href="index.html">
+    ← Return to J. J. Engola's Training Series
+  </a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <strong>AZESE Fluid Dynamics Research & Training</strong>
+  <br>
+
+  J. J. Engola — Ph.D. Research Training Series
+  <br>
+
+  Project 01 • Foundation
+
+  <br><br>
+
+  © 2026 Prof. Martin N. Azese
+
+</footer>
+
+
+</body>
+</html>
