@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>J. J. Engola | Ph.D. Research Training | AZESE Fluid Dynamics</title>
+
+  <meta name="description"
+        content="J. J. Engola Ph.D. Research Training Series in capillary dynamics under the supervision of Prof. Martin N. Azese.">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202833;
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    /* Navigation */
+
+    nav {
+      background: #0b1f33;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: #e8eef5;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Hero */
+
+    .hero {
+      background: linear-gradient(135deg, #0b1f33, #183f61);
+      color: white;
+      padding: 75px 8%;
+    }
+
+    .hero-content {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      color: #c9d8e7;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 15px 0;
+    }
+
+    .hero p {
+      max-width: 850px;
+      font-size: 19px;
+      color: #e1eaf2;
+    }
+
+    /* Main content */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 30px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #0b2b48;
+      font-size: 31px;
+    }
+
+    .lead {
+      font-size: 18px;
+      max-width: 920px;
+    }
+
+    /* Researcher information */
+
+    .researcher-box {
+      background: #f3f6f8;
+      border-left: 5px solid #183f61;
+      padding: 28px;
+      margin: 30px 0;
+    }
+
+    .researcher-box strong {
+      color: #0b2b48;
+    }
+
+    /* Training pathway */
+
+    .pathway {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 35px 0;
+    }
+
+    .path-step {
+      background: #0b2b48;
+      color: white;
+      padding: 18px 10px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .path-step strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    /* Project cards */
+
+    .projects {
+      background: #f4f6f8;
+    }
+
+    .project-card {
+      background: white;
+      margin: 22px 0;
+      padding: 28px;
+      border-left: 5px solid #1c5279;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .project-number {
+      color: #1c5279;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .project-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #0b2b48;
+      font-size: 23px;
+      margin: 7px 0;
+    }
+
+    .status {
+      display: inline-block;
+      background: #e7eef4;
+      color: #183f61;
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Thesis connection */
+
+    .thesis-box {
+      border-top: 1px solid #dde3e8;
+      border-bottom: 1px solid #dde3e8;
+    }
+
+    /* Credit */
+
+    .credit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .credit-card {
+      border: 1px solid #d8e0e8;
+      padding: 24px;
+      border-radius: 4px;
+    }
+
+    .credit-card h3 {
+      color: #0b2b48;
+      font-family: Georgia, "Times New Roman", serif;
+      margin-top: 0;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #081827;
+      color: #cbd6df;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .pathway {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: block;
+      }
+
+      nav .links {
+        margin-top: 12px;
+      }
+
+      nav a {
+        margin: 0 15px 0 0;
+        display: inline-block;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <nav>
+
+    <div class="brand">
+      AZESE FLUID DYNAMICS
+    </div>
+
+    <div class="links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#training">Ph.D. Training</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#join">Join the Group</a>
+    </div>
+
+  </nav>
+
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="label">
+        Ph.D. Research Training Series
+      </div>
+
+      <h1>
+        J. J. Engola — Capillary Dynamics
+      </h1>
+
+      <p>
+        A progressive analytical and computational research-training
+        program connecting fundamental dynamical models to research-level
+        problems in transient capillary transport.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="container">
+
+      <h2>Research Training Profile</h2>
+
+      <div class="researcher-box">
+
+        <p>
+          <strong>Ph.D. Researcher:</strong> J. J. Engola
+        </p>
+
+        <p>
+          <strong>Research Supervisor:</strong>
+          Prof. Martin N. Azese
+        </p>
+
+        <p>
+          <strong>Research Area:</strong>
+          Unsteady capillary transport in rectangular and circular
+          conduits, including gravity, evolving surface tension,
+          entrance effects, and transient meniscus dynamics.
+        </p>
+
+      </div>
+
+      <p class="lead">
+        This series documents selected analytical and computational
+        projects undertaken as part of J. J. Engola's doctoral research
+        training. The projects are designed to develop progressively the
+        mathematical, computational, physical, and critical-analysis skills
+        required for independent research in fluid mechanics.
+      </p>
+
+      <p>
+        Rather than presenting only final research outcomes, this platform
+        makes selected stages of the training process accessible. Each
+        project emphasizes derivation, verification, computation,
+        visualization, physical interpretation, and assessment of model
+        limitations.
+      </p>
+
+    </section>
+
+
+    <section class="container">
+
+      <h2>Training Progression</h2>
+
+      <p>
+        The five-project sequence is organized as a progression from
+        mathematical foundations toward research-level analysis.
+      </p>
+
+      <div class="pathway">
+
+        <div class="path-step">
+          <strong>01</strong>
+          Foundation
+        </div>
+
+        <div class="path-step">
+          <strong>02</strong>
+          Analysis
+        </div>
+
+        <div class="path-step">
+          <strong>03</strong>
+          Approximation
+        </div>
+
+        <div class="path-step">
+          <strong>04</strong>
+          Computation
+        </div>
+
+        <div class="path-step">
+          <strong>05</strong>
+          Research
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="projects">
+
+      <div class="container">
+
+        <h2>Research Training Projects</h2>
+
+
+        <div class="project-card">
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <h3>
+            Analytical Dynamics of a Moving Jurin Level
+            and Damped Capillary Oscillations
+          </h3>
+
+          <span class="status">
+            COMPLETED
+          </span>
+
+          <p>
+            Analytical derivation and controlled numerical investigation
+            of damped oscillatory motion about an evolving reference level,
+            with emphasis on relaxation scales, oscillation envelopes,
+            extrema, frequency, damping, and physical interpretation.
+          </p>
+
+          <p>
+            <strong>
+              Detailed project page and downloadable materials:
+            </strong>
+            being prepared for public release.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <h3>
+            Research Training Module 02
+          </h3>
+
+          <span class="status">
+            COMING SOON
+          </span>
+
+          <p>
+            The complete project description and student-developed
+            solution will be added progressively.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-number">
+            PROJECT 03
+          </div>
+
+          <h3>
+            Research Training Module 03
+          </h3>
+
+          <span class="status">
+            COMING SOON
+          </span>
+
+          <p>
+            The complete project description and student-developed
+            solution will be added progressively.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <h3>
+            Research Training Module 04
+          </h3>
+
+          <span class="status">
+            COMING SOON
+          </span>
+
+          <p>
+            The complete project description and student-developed
+            solution will be added progressively.
+          </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div class="project-number">
+            PROJECT 05
+          </div>
+
+          <h3>
+            Research Training Module 05
+          </h3>
+
+          <span class="status">
+            COMING SOON
+          </span>
+
+          <p>
+            The complete project description and student-developed
+            solution will be added progressively.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="container thesis-box">
+
+      <h2>Connection to the Ph.D. Research</h2>
+
+      <p class="lead">
+        The training modules provide analytical and computational bridges
+        toward a broader investigation of transient capillary dynamics.
+      </p>
+
+      <p>
+        The doctoral research extends the study of capillary transport
+        in rectangular and circular conduits subject to unsteady surface
+        tension by incorporating gravity and entrance effects. The research
+        examines how capillary forcing, gravitational resistance, viscous
+        dissipation, liquid-column inertia, conduit geometry, and entrance
+        dynamics interact to produce cessation, overshoot, reversal,
+        rebound, and oscillatory relaxation.
+      </p>
+
+      <p>
+        The progressive training exercises therefore serve not as
+        substitutes for the complete nonlinear model, but as controlled
+        environments in which individual mathematical and physical
+        mechanisms can be isolated, understood, tested, and subsequently
+        connected to the full research problem.
+      </p>
+
+    </section>
+
+
+    <section class="container">
+
+      <h2>Research Training & Credit</h2>
+
+      <p>
+        Clear attribution is maintained throughout this series to distinguish
+        project conception and supervision from the student's analytical
+        and computational work.
+      </p>
+
+      <div class="credit-grid">
+
+        <div class="credit-card">
+
+          <h3>Prof. Martin N. Azese</h3>
+
+          <p>
+            Research supervision, training-project conception,
+            analytical problem design, physical framework, and
+            integration with the broader doctoral research program.
+          </p>
+
+        </div>
+
+
+        <div class="credit-card">
+
+          <h3>J. J. Engola</h3>
+
+          <p>
+            Student analytical derivations, computational implementation,
+            numerical investigations, visualization, verification,
+            and physical interpretation developed through the
+            research-training projects.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <strong>
+      AZESE Fluid Dynamics Research & Training
+    </strong>
+
+    <br>
+
+    Ph.D. Research Training Series — J. J. Engola
+
+    <br><br>
+
+    © 2026 Prof. Martin N. Azese
+
+  </footer>
+
+
+</body>
+</html>
